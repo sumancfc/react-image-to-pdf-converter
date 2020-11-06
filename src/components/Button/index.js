@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Button = ({ clickHandler, uploadImage }) => {
+const Button = ({ generatePdfFromImages, uploadImage, handleImageUpload }) => {
   return (
     <ButtonContainer>
       <label htmlFor='file-input'>
@@ -10,13 +10,13 @@ const Button = ({ clickHandler, uploadImage }) => {
           id='file-input'
           type='file'
           accept='image/*'
-          onChange={clickHandler}
+          onChange={handleImageUpload}
           style={{ display: "none" }}
           multiple
         />
       </label>
 
-      <Btn onClick={clickHandler} disabled={uploadImage.length === 0}>
+      <Btn onClick={generatePdfFromImages} disabled={uploadImage.length === 0}>
         Generate PDF
       </Btn>
     </ButtonContainer>

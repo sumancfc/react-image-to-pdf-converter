@@ -1,17 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-const Image = ({ image }) => {
+const Image = ({ uploadImage }) => {
   return (
     <ImageContainer>
-      {image.length > 0 ? (
-        image.map((img, i) => (
-          <Img
-            key={i}
-            src={img.src}
-            alt={img.name}
-            className='uploaded-image'
-          />
+      {uploadImage.length > 0 ? (
+        uploadImage.map((img, i) => (
+          <Img key={i} src={img.src} alt={img.name} />
         ))
       ) : (
         <ImageText>Upload Image Here</ImageText>
